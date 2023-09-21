@@ -1,0 +1,45 @@
+from pathlib import Path
+from setuptools import setup
+
+long_description = Path('README.md').read_text()
+
+setup(
+    name='Prometheus-Glitchtip_Exporter',
+    packages=['Prometheus-Glitchtip_Exporter'],
+    version='0.1.0',
+    description='Prometheus metrics exporter for gltichtip',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    license='APACHE 2.0',
+    author='Bosse Klein',
+    author_email='kleinbosse@gmail.com',
+    url='https://github.com/essbo/GlitchtipExporter',
+    download_url='https://github.com/essbo/GlitchtipExporter/archive/refs/heads/main.zip',
+    keywords=['prometheus', 'glitchtip', 'monitoring', 'exporter'],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Intended Audience :: System Administrators',
+        'Topic :: System :: Monitoring',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+    ],
+    install_requires=['prometheus_client',
+                      'base64',
+                      'json',
+                      'pickle',
+                      'requests',
+                      'pycurl',
+                      'argparse',
+                      'yaml',
+                      'sys',
+                      'time',
+                      'configparser',
+                      'os',
+                      'pathlib'],
+)
