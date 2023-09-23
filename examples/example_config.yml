@@ -1,0 +1,44 @@
+global:
+  scrape_interval: 15s     # The Exporter will Scrape each aktivated collector every scrape_interval seconds. depending on the amount of data you may want to increase this value
+  host:                    # the host where glitchtip is running
+  log_level: info          # debug, info, warning, error, critical  (default: info)
+  bind_address: "0.0.0.0"  # The address where the exporter will be exposed
+  port: 9999               # The port where the exporter will be exposed
+  metrics_path: /metrics   # The path where the metrics will be exposed
+  token:                   # The token for the api
+
+
+  collectors:
+    list:
+      active: true
+      timeout: 5s
+    issues:
+      active: true  # If the collector should be activated
+      timeout: 5s   # Timeout for the request. If you have a lot of projects, you may want to increase this value
+      projects:
+        - project1
+        - project2  # You may add as many projects as you want
+        - project3  # Depending on your projects in glitchtip
+    organizations:
+      active: true
+      timeout: 5s
+      organizations:
+        - organization1 # You may add as many organizations as you want
+        - organization2 # Depending on your organizations in glitchtip
+    projects:
+      active: true
+      timeout: 5s
+      projects:
+        - project1 
+        - project2    
+    subscriptions:
+      active: true
+      timeout: 5s
+    users_example:
+      active: true
+      timeout: 5s
+    teams_example:
+      timeout: 5s
+      active: true
+
+  
